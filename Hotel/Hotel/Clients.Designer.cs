@@ -59,7 +59,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(124, 371);
+            this.button2.Location = new System.Drawing.Point(121, 364);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(91, 42);
             this.button2.TabIndex = 11;
@@ -68,7 +68,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 371);
+            this.button1.Location = new System.Drawing.Point(25, 364);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 42);
             this.button1.TabIndex = 12;
@@ -95,7 +95,7 @@
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 38);
+            this.groupBox2.Location = new System.Drawing.Point(9, 31);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(308, 327);
             this.groupBox2.TabIndex = 9;
@@ -268,7 +268,7 @@
             // 
             // CloseBtn
             // 
-            this.CloseBtn.Location = new System.Drawing.Point(221, 371);
+            this.CloseBtn.Location = new System.Drawing.Point(218, 364);
             this.CloseBtn.Name = "CloseBtn";
             this.CloseBtn.Size = new System.Drawing.Size(91, 42);
             this.CloseBtn.TabIndex = 8;
@@ -282,7 +282,7 @@
             this.помощьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(321, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(326, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -302,14 +302,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 418);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(326, 414);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.CloseBtn);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Clients";
-            this.Text = "Clients";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Форма заселения клиента";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

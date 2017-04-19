@@ -247,7 +247,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 428);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(633, 421);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -257,7 +258,10 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "JournalForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JournalForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
