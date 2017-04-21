@@ -274,6 +274,7 @@
             this.CloseBtn.TabIndex = 8;
             this.CloseBtn.Text = "Вернуться";
             this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // menuStrip1
             // 
@@ -291,6 +292,7 @@
             this.журналКлиентовToolStripMenuItem.Name = "журналКлиентовToolStripMenuItem";
             this.журналКлиентовToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
             this.журналКлиентовToolStripMenuItem.Text = "Журнал клиентов";
+            this.журналКлиентовToolStripMenuItem.Click += new System.EventHandler(this.журналКлиентовToolStripMenuItem_Click);
             // 
             // помощьToolStripMenuItem
             // 

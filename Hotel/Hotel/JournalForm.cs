@@ -16,5 +16,16 @@ namespace Hotel
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel1.Enabled = true;
+            
+        }
     }
 }
