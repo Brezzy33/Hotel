@@ -16,5 +16,16 @@ namespace Hotel
         {
             InitializeComponent();
         }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void журналКлиентовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            JournalForm jf = new JournalForm();
+            jf.Show();
+        }
     }
 }

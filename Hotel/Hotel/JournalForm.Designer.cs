@@ -77,6 +77,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Вернуться";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -86,6 +87,7 @@
             this.button4.TabIndex = 13;
             this.button4.Text = "Закрыть";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnSave
             // 
