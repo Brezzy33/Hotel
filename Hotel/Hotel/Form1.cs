@@ -15,6 +15,7 @@ namespace Hotel
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         public void RowsColor() //Подсвечиваем ячейки заселенные и забронированные
