@@ -48,7 +48,7 @@ namespace Hotel
                     {
                         if (obj.Password== txtPassword.Text)
                         {
-                            using (Form1 frm1 = new Form1())
+                            using (MainMenu frm1 = new MainMenu())
                             {
                                 this.Hide();
                                 frm1.ShowDialog();

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -53,8 +56,28 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.журналКлиентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.refreshBtn = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.konfortComboBox = new System.Windows.Forms.ComboBox();
+            this.vmestComboBox = new System.Windows.Forms.ComboBox();
+            this.exitBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.zaselenBtn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
@@ -283,7 +306,7 @@
             this.помощьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(326, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1356, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -300,12 +323,215 @@
             this.помощьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.помощьToolStripMenuItem.Text = "Помощь";
             // 
+            // searchBtn
+            // 
+            this.searchBtn.Location = new System.Drawing.Point(540, 166);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(103, 40);
+            this.searchBtn.TabIndex = 36;
+            this.searchBtn.Text = "Поиск";
+            this.searchBtn.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(646, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 13);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Номера в гостинице:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(649, 95);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.Size = new System.Drawing.Size(644, 252);
+            this.dataGridView1.TabIndex = 28;
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Location = new System.Drawing.Point(540, 259);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(103, 41);
+            this.refreshBtn.TabIndex = 32;
+            this.refreshBtn.Text = "Обновить";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Location = new System.Drawing.Point(380, 166);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(154, 134);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Цена за номер:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(6, 90);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(142, 20);
+            this.textBox2.TabIndex = 0;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(6, 46);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(142, 20);
+            this.textBox3.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "До:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "От:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.konfortComboBox);
+            this.groupBox3.Controls.Add(this.vmestComboBox);
+            this.groupBox3.Location = new System.Drawing.Point(380, 76);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(263, 84);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Параметры:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Комфортность:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Вместимость:";
+            // 
+            // konfortComboBox
+            // 
+            this.konfortComboBox.DisplayMember = "idComfortable";
+            this.konfortComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.konfortComboBox.FormattingEnabled = true;
+            this.konfortComboBox.Location = new System.Drawing.Point(91, 51);
+            this.konfortComboBox.Name = "konfortComboBox";
+            this.konfortComboBox.Size = new System.Drawing.Size(162, 21);
+            this.konfortComboBox.TabIndex = 3;
+            this.konfortComboBox.ValueMember = "idComfortable";
+            // 
+            // vmestComboBox
+            // 
+            this.vmestComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.vmestComboBox.FormattingEnabled = true;
+            this.vmestComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.vmestComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.vmestComboBox.Location = new System.Drawing.Point(91, 19);
+            this.vmestComboBox.Name = "vmestComboBox";
+            this.vmestComboBox.Size = new System.Drawing.Size(162, 21);
+            this.vmestComboBox.TabIndex = 2;
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.Location = new System.Drawing.Point(540, 305);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(103, 41);
+            this.exitBtn.TabIndex = 33;
+            this.exitBtn.Text = "Выйти";
+            this.exitBtn.UseVisualStyleBackColor = true;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Enabled = false;
+            this.deleteBtn.Location = new System.Drawing.Point(540, 212);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(103, 41);
+            this.deleteBtn.TabIndex = 34;
+            this.deleteBtn.Text = "Удалить";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            // 
+            // zaselenBtn
+            // 
+            this.zaselenBtn.Location = new System.Drawing.Point(378, 306);
+            this.zaselenBtn.Name = "zaselenBtn";
+            this.zaselenBtn.Size = new System.Drawing.Size(103, 40);
+            this.zaselenBtn.TabIndex = 31;
+            this.zaselenBtn.Text = "Заселить";
+            this.zaselenBtn.UseVisualStyleBackColor = true;
+            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(326, 414);
+            this.ClientSize = new System.Drawing.Size(1356, 414);
+            this.Controls.Add(this.searchBtn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.refreshBtn);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.exitBtn);
+            this.Controls.Add(this.deleteBtn);
+            this.Controls.Add(this.zaselenBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
@@ -320,6 +546,11 @@
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +583,22 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem журналКлиентовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
+        private System.Windows.Forms.Button searchBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button refreshBtn;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox konfortComboBox;
+        private System.Windows.Forms.ComboBox vmestComboBox;
+        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button zaselenBtn;
     }
 }
