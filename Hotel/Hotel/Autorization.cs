@@ -12,8 +12,7 @@ namespace Hotel
     {
         public Autorization()
         {
-            InitializeComponent();       
-
+            InitializeComponent();
         }
 
 

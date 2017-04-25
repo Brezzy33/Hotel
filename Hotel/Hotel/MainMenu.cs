@@ -19,24 +19,22 @@ namespace Hotel
             metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
             metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
         }
-
-        /*
+        
         public void RowsColor() //Подсвечиваем ячейки заселенные и забронированные
         {
-            for (int i = 0; i < mGrid.RowCount; i++)
-            {
-                
-                if (mGrid.Rows[i].Cells[5].Value.ToString() == "Заселен")
+            for (int j = 0; j < mGrid.RowCount-1; j++)
+            {   
+                if (mGrid.Rows[j].Cells[5].Value.ToString() == "Заселен")
                 {
-                    mGrid.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    //Меняем цвет ячейки
+                    mGrid.Rows[j].Cells[5].Style.BackColor = Color.Red;
                 }
-                if (mGrid.Rows[i].Cells[5].Value.ToString() == "Забронирован")
+                if (mGrid.Rows[j].Cells[5].Value.ToString() == "Забронирован")
                 {
-                    mGrid.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                    mGrid.Rows[j].Cells[5].Style.BackColor = Color.Yellow;
                 }
             }
         }
-       */
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
@@ -62,23 +60,10 @@ namespace Hotel
             }
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            int IndentId = Convert.ToInt32(mGrid.CurrentRow.Cells[3].Value);
-            {
-                if (MessageBox.Show("Вы точно желаете освободить комнату № " + IndentId + "? ",
-                    "Уведомление", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-
-                }
-            }
-
-        }
-
         private void номераВГостиницеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             btnDelete.Enabled = false;
-            //RowsColor();
+            RowsColor();
         }
 
         private void занятыеНомераToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +79,8 @@ namespace Hotel
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hotelDataSet1.ViewMainForm' table. You can move, or remove it, as needed.
+            this.viewMainFormTableAdapter.Fill(this.hotelDataSet1.ViewMainForm);
             // TODO: This line of code loads data into the 'hotelDataSet.TypeComfortable' table. You can move, or remove it, as needed.
             this.typeComfortableTableAdapter.Fill(this.hotelDataSet.TypeComfortable);
             // TODO: This line of code loads data into the 'hotelDataSet.Numbers' table. You can move, or remove it, as needed.
@@ -102,7 +89,7 @@ namespace Hotel
             this.numbersTableAdapter.Fill(this.hotelDataSet.Numbers);
             // TODO: This line of code loads data into the 'hotelDataSet.ViewMainForm' table. You can move, or remove it, as needed.
             this.viewMainFormTableAdapter.Fill(this.hotelDataSet.ViewMainForm);
-            //RowsColor();
+            RowsColor();
         }
 
         private void brnExit_Click(object sender, EventArgs e)
@@ -110,9 +97,33 @@ namespace Hotel
             Application.Exit();
         }
 
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void brnExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int IndentId = Convert.ToInt32(mGrid.CurrentRow.Cells[7].Value);
+            {
+                if (MessageBox.Show("Вы точно желаете освободить комнату № " + IndentId + "? ",
+                    "Уведомление", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    HotelDataSetTableAdapters.QueriesTableAdapter delsetl = new HotelDataSetTableAdapters.QueriesTableAdapter();
+                    delsetl.Delsettl((int)IndentId);
+                    MainMenu_Load(null, null);
+                }
+            }
+        }
+
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
+            MainMenu_Load(null, null);
         }
     }
 }

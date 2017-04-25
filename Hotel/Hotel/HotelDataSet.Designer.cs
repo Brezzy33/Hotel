@@ -2091,6 +2091,8 @@ namespace Hotel {
             
             private global::System.Data.DataColumn columnНомер_комнаты;
             
+            private global::System.Data.DataColumn columnSettlement;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ViewMainFormDataTable() {
@@ -2182,6 +2184,14 @@ namespace Hotel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SettlementColumn {
+                get {
+                    return this.columnSettlement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2217,7 +2227,7 @@ namespace Hotel {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ViewMainFormRow AddViewMainFormRow(string Фамилия, string Имя, string Коммент, System.DateTime Дата_заселения, System.DateTime Дата_выселения, string Статус, int Номер_комнаты) {
+            public ViewMainFormRow AddViewMainFormRow(string Фамилия, string Имя, string Коммент, System.DateTime Дата_заселения, System.DateTime Дата_выселения, string Статус, int Номер_комнаты, int Settlement) {
                 ViewMainFormRow rowViewMainFormRow = ((ViewMainFormRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Фамилия,
@@ -2226,7 +2236,8 @@ namespace Hotel {
                         Дата_заселения,
                         Дата_выселения,
                         Статус,
-                        Номер_комнаты};
+                        Номер_комнаты,
+                        Settlement};
                 rowViewMainFormRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowViewMainFormRow);
                 return rowViewMainFormRow;
@@ -2256,6 +2267,7 @@ namespace Hotel {
                 this.columnДата_выселения = base.Columns["Дата_выселения"];
                 this.columnСтатус = base.Columns["Статус"];
                 this.columnНомер_комнаты = base.Columns["Номер комнаты"];
+                this.columnSettlement = base.Columns["Settlement"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2275,6 +2287,8 @@ namespace Hotel {
                 base.Columns.Add(this.columnСтатус);
                 this.columnНомер_комнаты = new global::System.Data.DataColumn("Номер комнаты", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnНомер_комнаты);
+                this.columnSettlement = new global::System.Data.DataColumn("Settlement", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSettlement);
                 this.columnФамилия.AllowDBNull = false;
                 this.columnФамилия.MaxLength = 35;
                 this.columnИмя.AllowDBNull = false;
@@ -2283,6 +2297,7 @@ namespace Hotel {
                 this.columnДата_заселения.AllowDBNull = false;
                 this.columnСтатус.MaxLength = 2147483647;
                 this.columnНомер_комнаты.AllowDBNull = false;
+                this.columnSettlement.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3334,6 +3349,17 @@ namespace Hotel {
                 }
                 set {
                     this[this.tableViewMainForm.Номер_комнатыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Settlement {
+                get {
+                    return ((int)(this[this.tableViewMainForm.SettlementColumn]));
+                }
+                set {
+                    this[this.tableViewMainForm.SettlementColumn] = value;
                 }
             }
             
@@ -5620,6 +5646,7 @@ SELECT idComfortable, TypeCom FROM TypeComfortable WHERE (idComfortable = @idCom
             tableMapping.ColumnMappings.Add("Дата_выселения", "Дата_выселения");
             tableMapping.ColumnMappings.Add("Статус", "Статус");
             tableMapping.ColumnMappings.Add("Номер комнаты", "Номер комнаты");
+            tableMapping.ColumnMappings.Add("Settlement", "Settlement");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5637,7 +5664,7 @@ SELECT idComfortable, TypeCom FROM TypeComfortable WHERE (idComfortable = @idCom
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Фамилия, Имя, Коммент, Дата_заселения, Дата_выселения, Статус, [Номер комн" +
-                "аты] FROM dbo.ViewMainForm()";
+                "аты], Settlement FROM dbo.ViewMainForm() AS ViewMainForm_1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5900,6 +5927,71 @@ SELECT idComfortable, TypeCom FROM TypeComfortable WHERE (idComfortable = @idCom
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.IDbCommand[] _commandCollection;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.IDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.IDbCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Hotel.Properties.Settings.Default.HotelConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.Delsettl";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clientid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Delsettl(global::System.Nullable<int> clientid) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
+            if ((clientid.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(clientid.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
