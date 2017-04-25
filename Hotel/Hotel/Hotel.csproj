@@ -78,11 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HotelDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="JournalForm.cs">
+    <Compile Include="Journal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JournalForm.Designer.cs">
-      <DependentUpon>JournalForm.cs</DependentUpon>
+    <Compile Include="Journal.Designer.cs">
+      <DependentUpon>Journal.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -99,8 +99,8 @@
     <EmbeddedResource Include="Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JournalForm.resx">
-      <DependentUpon>JournalForm.cs</DependentUpon>
+    <EmbeddedResource Include="Journal.resx">
+      <DependentUpon>Journal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

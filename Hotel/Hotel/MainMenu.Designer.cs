@@ -29,10 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mGrid = new MetroFramework.Controls.MetroGrid();
+            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номерКомнатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датазаселенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датавыселенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.комментDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.settlementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.viewMainFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet1 = new Hotel.HotelDataSet();
             this.hotelDataSet = new Hotel.HotelDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -54,25 +64,15 @@
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.numbersTableAdapter = new Hotel.HotelDataSetTableAdapters.NumbersTableAdapter();
             this.typeComfortableTableAdapter = new Hotel.HotelDataSetTableAdapters.TypeComfortableTableAdapter();
-            this.hotelDataSet1 = new Hotel.HotelDataSet();
-            this.viewMainFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewMainFormTableAdapter = new Hotel.HotelDataSetTableAdapters.ViewMainFormTableAdapter();
-            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.номерКомнатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датазаселенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датавыселенияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.комментDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.settlementDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewMainFormBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numbersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeComfortableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewMainFormBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mGrid
@@ -83,14 +83,14 @@
             this.mGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.mGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.mGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.фамилияDataGridViewTextBoxColumn,
@@ -102,32 +102,93 @@
             this.комментDataGridViewTextBoxColumn,
             this.settlementDataGridViewTextBoxColumn});
             this.mGrid.DataSource = this.viewMainFormBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.mGrid.EnableHeadersVisualStyles = false;
             this.mGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mGrid.Location = new System.Drawing.Point(255, 63);
             this.mGrid.Name = "mGrid";
             this.mGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mGrid.Size = new System.Drawing.Size(741, 473);
             this.mGrid.TabIndex = 0;
+            // 
+            // фамилияDataGridViewTextBoxColumn
+            // 
+            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            // 
+            // имяDataGridViewTextBoxColumn
+            // 
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            // 
+            // номерКомнатыDataGridViewTextBoxColumn
+            // 
+            this.номерКомнатыDataGridViewTextBoxColumn.DataPropertyName = "Номер комнаты";
+            this.номерКомнатыDataGridViewTextBoxColumn.HeaderText = "Номер комнаты";
+            this.номерКомнатыDataGridViewTextBoxColumn.Name = "номерКомнатыDataGridViewTextBoxColumn";
+            // 
+            // датазаселенияDataGridViewTextBoxColumn
+            // 
+            this.датазаселенияDataGridViewTextBoxColumn.DataPropertyName = "Дата_заселения";
+            this.датазаселенияDataGridViewTextBoxColumn.HeaderText = "Дата заселения";
+            this.датазаселенияDataGridViewTextBoxColumn.Name = "датазаселенияDataGridViewTextBoxColumn";
+            // 
+            // датавыселенияDataGridViewTextBoxColumn
+            // 
+            this.датавыселенияDataGridViewTextBoxColumn.DataPropertyName = "Дата_выселения";
+            this.датавыселенияDataGridViewTextBoxColumn.HeaderText = "Дата выселения";
+            this.датавыселенияDataGridViewTextBoxColumn.Name = "датавыселенияDataGridViewTextBoxColumn";
+            // 
+            // статусDataGridViewTextBoxColumn
+            // 
+            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
+            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
+            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
+            // 
+            // комментDataGridViewTextBoxColumn
+            // 
+            this.комментDataGridViewTextBoxColumn.DataPropertyName = "Коммент";
+            this.комментDataGridViewTextBoxColumn.HeaderText = "Коммент";
+            this.комментDataGridViewTextBoxColumn.Name = "комментDataGridViewTextBoxColumn";
+            // 
+            // settlementDataGridViewTextBoxColumn
+            // 
+            this.settlementDataGridViewTextBoxColumn.DataPropertyName = "Settlement";
+            this.settlementDataGridViewTextBoxColumn.HeaderText = "Settlement";
+            this.settlementDataGridViewTextBoxColumn.Name = "settlementDataGridViewTextBoxColumn";
+            this.settlementDataGridViewTextBoxColumn.ReadOnly = true;
+            this.settlementDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.settlementDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // viewMainFormBindingSource
+            // 
+            this.viewMainFormBindingSource.DataMember = "ViewMainForm";
+            this.viewMainFormBindingSource.DataSource = this.hotelDataSet1;
+            // 
+            // hotelDataSet1
+            // 
+            this.hotelDataSet1.DataSetName = "HotelDataSet";
+            this.hotelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // hotelDataSet
             // 
@@ -303,7 +364,7 @@
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(233, 35);
             this.btnLoad.TabIndex = 6;
-            this.btnLoad.Text = "Load/Refresh";
+            this.btnLoad.Text = "Refresh";
             this.btnLoad.UseSelectable = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
@@ -339,6 +400,7 @@
             this.metroButton1.TabIndex = 6;
             this.metroButton1.Text = "Journal";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton3
             // 
@@ -357,70 +419,9 @@
             // 
             this.typeComfortableTableAdapter.ClearBeforeFill = true;
             // 
-            // hotelDataSet1
-            // 
-            this.hotelDataSet1.DataSetName = "HotelDataSet";
-            this.hotelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // viewMainFormBindingSource
-            // 
-            this.viewMainFormBindingSource.DataMember = "ViewMainForm";
-            this.viewMainFormBindingSource.DataSource = this.hotelDataSet1;
-            // 
             // viewMainFormTableAdapter
             // 
             this.viewMainFormTableAdapter.ClearBeforeFill = true;
-            // 
-            // фамилияDataGridViewTextBoxColumn
-            // 
-            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
-            // 
-            // имяDataGridViewTextBoxColumn
-            // 
-            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
-            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
-            // 
-            // номерКомнатыDataGridViewTextBoxColumn
-            // 
-            this.номерКомнатыDataGridViewTextBoxColumn.DataPropertyName = "Номер комнаты";
-            this.номерКомнатыDataGridViewTextBoxColumn.HeaderText = "Номер комнаты";
-            this.номерКомнатыDataGridViewTextBoxColumn.Name = "номерКомнатыDataGridViewTextBoxColumn";
-            // 
-            // датазаселенияDataGridViewTextBoxColumn
-            // 
-            this.датазаселенияDataGridViewTextBoxColumn.DataPropertyName = "Дата_заселения";
-            this.датазаселенияDataGridViewTextBoxColumn.HeaderText = "Дата заселения";
-            this.датазаселенияDataGridViewTextBoxColumn.Name = "датазаселенияDataGridViewTextBoxColumn";
-            // 
-            // датавыселенияDataGridViewTextBoxColumn
-            // 
-            this.датавыселенияDataGridViewTextBoxColumn.DataPropertyName = "Дата_выселения";
-            this.датавыселенияDataGridViewTextBoxColumn.HeaderText = "Дата выселения";
-            this.датавыселенияDataGridViewTextBoxColumn.Name = "датавыселенияDataGridViewTextBoxColumn";
-            // 
-            // статусDataGridViewTextBoxColumn
-            // 
-            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
-            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
-            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
-            // 
-            // комментDataGridViewTextBoxColumn
-            // 
-            this.комментDataGridViewTextBoxColumn.DataPropertyName = "Коммент";
-            this.комментDataGridViewTextBoxColumn.HeaderText = "Коммент";
-            this.комментDataGridViewTextBoxColumn.Name = "комментDataGridViewTextBoxColumn";
-            // 
-            // settlementDataGridViewTextBoxColumn
-            // 
-            this.settlementDataGridViewTextBoxColumn.DataPropertyName = "Settlement";
-            this.settlementDataGridViewTextBoxColumn.HeaderText = "Settlement";
-            this.settlementDataGridViewTextBoxColumn.Name = "settlementDataGridViewTextBoxColumn";
-            this.settlementDataGridViewTextBoxColumn.ReadOnly = true;
-            this.settlementDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.settlementDataGridViewTextBoxColumn.Visible = false;
             // 
             // MainMenu
             // 
@@ -440,14 +441,14 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewMainFormBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numbersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeComfortableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewMainFormBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

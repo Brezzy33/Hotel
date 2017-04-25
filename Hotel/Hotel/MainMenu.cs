@@ -71,11 +71,6 @@ namespace Hotel
             btnDelete.Enabled = true;
         }
 
-        private void журналКлиентовToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            JournalForm jf = new JournalForm();
-            jf.Show();
-        }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
@@ -124,6 +119,13 @@ namespace Hotel
         private void btnLoad_Click(object sender, EventArgs e)
         {
             MainMenu_Load(null, null);
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            Journal jn = new Journal();
+            jn.Show();
+            this.Hide();
         }
     }
 }

@@ -22,10 +22,5 @@ namespace Hotel
             this.Close();
         }
 
-        private void журналКлиентовToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            JournalForm jf = new JournalForm();
-            jf.Show();
-        }
     }
 }
