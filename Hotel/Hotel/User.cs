@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hotel
 {
-    public class User
+    public class User //For form Autorization
     {
         public string UserName { get; set; }
 
