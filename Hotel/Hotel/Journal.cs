@@ -17,6 +17,7 @@ namespace Hotel
         public Journal()
         {
             InitializeComponent();
+            Edit(false);
         }
 
         private void Journal_Load(object sender, EventArgs e)
@@ -29,33 +30,40 @@ namespace Hotel
         {
             MainMenu mn = new MainMenu();
             mn.Show();
-            Edit(true);
+            Edit(false);
             ClearText();
             this.Close();
         }
 
         void Edit(bool value)
         {
-            txtID.ReadOnly = value;
-            txtName.ReadOnly = value;
-            txtPassport.ReadOnly = value;
-            txtPatronimic.ReadOnly = value;
-            txtSurname.ReadOnly = value;
-            txtTagging.ReadOnly = value;
+            txtName.Enabled = value;
+            txtPassport.Enabled = value;
+            txtPatronimic.Enabled = value;
+            txtSurname.Enabled = value;
+            txtTagging.Enabled = value;
         }
 
         private void mbtnEdit_Click(object sender, EventArgs e)
         {
-            Edit(false);//Allow edit
+            Edit(true);//Allow edit
             txtName.Focus();
         }
 
         private void mbtnAdd_Click(object sender, EventArgs e)
         {
             ClearText();
-            clientsBindingSource.Add(new Clients());
-            clientsBindingSource.MoveLast();
-            Edit(false);//Allow edit
+            try
+            {
+                txtName.Focus();
+                this.hotelDataSet.Clients.AddClientsRow(this.hotelDataSet.Clients.NewClientsRow());
+                clientsBindingSource.MoveLast();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            Edit(true);//Allow edit
             txtName.Focus();
         }
 
@@ -63,10 +71,11 @@ namespace Hotel
         {
             if (MetroFramework.MetroMessageBox.Show(this, "Are you sure to delete this client?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
             {
-               
-                        ClearText();
-                
-                
+                int IndentId = Convert.ToInt32(metroGrid1.CurrentRow.Cells[0].Value);
+                HotelDataSetTableAdapters.QueriesTableAdapter delsetl = new HotelDataSetTableAdapters.QueriesTableAdapter();
+                delsetl.DelClient((int)IndentId);
+                Journal_Load(null, null);
+                ClearText();
             }
            
         }
@@ -83,14 +92,35 @@ namespace Hotel
 
         private void mbtnSave_Click(object sender, EventArgs e)
         {
-            using (RedisClient client = new RedisClient("localhost", 7504))
-            {
-                clientsBindingSource.EndEdit();
-                
+                try
+                {
+                    clientsBindingSource.EndEdit();
+                    clientsTableAdapter.Update(this.hotelDataSet.Clients);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 MetroFramework.MetroMessageBox.Show(this,"Your data has been successfuly saved.","Message", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 //ClearText();
-                Edit(true);//Read only
+                Edit(false);//Read only
+        }
+
+        private void tstSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Clients". При необходимости она может быть перемещена или удалена.
+                this.clientsTableAdapter.Fill(this.hotelDataSet.Clients);
+                clientsBindingSource.DataSource = this.hotelDataSet.Clients;
+            }
+            else
+            {
+                var query = from o in this.hotelDataSet.Clients
+                            where o.Surname.Contains(tstSearch.Text) || o.Name.Contains(tstSearch.Text) || o.Patronimic.Contains(tstSearch.Text)
+                            select o;
+                clientsBindingSource.DataSource = query.ToList();
             }
         }
     }
