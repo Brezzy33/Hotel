@@ -44,7 +44,7 @@ namespace Hotel
 
         private void zaselenBtn_Click(object sender, EventArgs e)
         {
-            Clients cl = new Clients();
+            Settling cl = new Settling();
             cl.Show();
         }
 

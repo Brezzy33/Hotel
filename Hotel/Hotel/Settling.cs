@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Hotel
 {
-    public partial class Clients : Form
+    public partial class Settling : MetroFramework.Forms.MetroForm
     {
-        public Clients()
+        public Settling()
         {
             InitializeComponent();
         }
-
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }
