@@ -57,10 +57,13 @@
             this.settlementTableAdapter = new Hotel.HotelDataSetTableAdapters.SettlementTableAdapter();
             this.typeZaselTableAdapter = new Hotel.HotelDataSetTableAdapters.TypeZaselTableAdapter();
             this.numbersTableAdapter = new Hotel.HotelDataSetTableAdapters.NumbersTableAdapter();
+            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientsTableAdapter = new Hotel.HotelDataSetTableAdapters.ClientsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.settlementBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numbersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeZaselBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPopulate
@@ -264,9 +267,8 @@
             // 
             // comboBoxClients
             // 
-            this.comboBoxClients.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.settlementBindingSource, "idClient", true));
-            this.comboBoxClients.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.settlementBindingSource, "idClient", true));
-            this.comboBoxClients.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.settlementBindingSource, "idClient", true));
+            this.comboBoxClients.DataSource = this.clientsBindingSource;
+            this.comboBoxClients.DisplayMember = "idClient";
             this.comboBoxClients.FormattingEnabled = true;
             this.comboBoxClients.ItemHeight = 23;
             this.comboBoxClients.Location = new System.Drawing.Point(148, 63);
@@ -274,12 +276,12 @@
             this.comboBoxClients.Size = new System.Drawing.Size(176, 29);
             this.comboBoxClients.TabIndex = 22;
             this.comboBoxClients.UseSelectable = true;
+            this.comboBoxClients.ValueMember = "idClient";
             // 
             // comboBoxRooms
             // 
-            this.comboBoxRooms.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.numbersBindingSource, "idNumber", true));
-            this.comboBoxRooms.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.numbersBindingSource, "idNumber", true));
-            this.comboBoxRooms.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.numbersBindingSource, "idNumber", true));
+            this.comboBoxRooms.DataSource = this.numbersBindingSource;
+            this.comboBoxRooms.DisplayMember = "idNumber";
             this.comboBoxRooms.FormattingEnabled = true;
             this.comboBoxRooms.ItemHeight = 23;
             this.comboBoxRooms.Location = new System.Drawing.Point(148, 98);
@@ -287,6 +289,7 @@
             this.comboBoxRooms.Size = new System.Drawing.Size(176, 29);
             this.comboBoxRooms.TabIndex = 22;
             this.comboBoxRooms.UseSelectable = true;
+            this.comboBoxRooms.ValueMember = "idNumber";
             // 
             // numbersBindingSource
             // 
@@ -295,9 +298,8 @@
             // 
             // comboBoxType
             // 
-            this.comboBoxType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.typeZaselBindingSource, "TypeZas", true));
-            this.comboBoxType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.typeZaselBindingSource, "idTypeZasel", true));
-            this.comboBoxType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.typeZaselBindingSource, "TypeZas", true));
+            this.comboBoxType.DataSource = this.typeZaselBindingSource;
+            this.comboBoxType.DisplayMember = "TypeZas";
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.ItemHeight = 23;
             this.comboBoxType.Location = new System.Drawing.Point(161, 376);
@@ -305,6 +307,7 @@
             this.comboBoxType.Size = new System.Drawing.Size(163, 29);
             this.comboBoxType.TabIndex = 22;
             this.comboBoxType.UseSelectable = true;
+            this.comboBoxType.ValueMember = "idTypeZasel";
             // 
             // typeZaselBindingSource
             // 
@@ -362,6 +365,15 @@
             // 
             this.numbersTableAdapter.ClearBeforeFill = true;
             // 
+            // clientsBindingSource
+            // 
+            this.clientsBindingSource.DataMember = "Clients";
+            this.clientsBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // clientsTableAdapter
+            // 
+            this.clientsTableAdapter.ClearBeforeFill = true;
+            // 
             // Settling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,6 +407,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numbersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeZaselBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +443,7 @@
         private HotelDataSetTableAdapters.TypeZaselTableAdapter typeZaselTableAdapter;
         private System.Windows.Forms.BindingSource numbersBindingSource;
         private HotelDataSetTableAdapters.NumbersTableAdapter numbersTableAdapter;
+        private System.Windows.Forms.BindingSource clientsBindingSource;
+        private HotelDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
     }
 }

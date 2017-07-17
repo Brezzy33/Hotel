@@ -310,6 +310,7 @@
             this.metroButton3.TabIndex = 6;
             this.metroButton3.Text = "Populate";
             this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
             // numbersTableAdapter
             // 
@@ -389,6 +390,7 @@
             this.mGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mGrid.Location = new System.Drawing.Point(0, 3);
             this.mGrid.Name = "mGrid";
+            this.mGrid.ReadOnly = true;
             this.mGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -408,42 +410,49 @@
             this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
             this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // имяDataGridViewTextBoxColumn
             // 
             this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
             this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            this.имяDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // номерКомнатыDataGridViewTextBoxColumn
             // 
             this.номерКомнатыDataGridViewTextBoxColumn.DataPropertyName = "Номер комнаты";
             this.номерКомнатыDataGridViewTextBoxColumn.HeaderText = "Номер комнаты";
             this.номерКомнатыDataGridViewTextBoxColumn.Name = "номерКомнатыDataGridViewTextBoxColumn";
+            this.номерКомнатыDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // датазаселенияDataGridViewTextBoxColumn
             // 
             this.датазаселенияDataGridViewTextBoxColumn.DataPropertyName = "Дата_заселения";
             this.датазаселенияDataGridViewTextBoxColumn.HeaderText = "Дата заселения";
             this.датазаселенияDataGridViewTextBoxColumn.Name = "датазаселенияDataGridViewTextBoxColumn";
+            this.датазаселенияDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // датавыселенияDataGridViewTextBoxColumn
             // 
             this.датавыселенияDataGridViewTextBoxColumn.DataPropertyName = "Дата_выселения";
             this.датавыселенияDataGridViewTextBoxColumn.HeaderText = "Дата выселения";
             this.датавыселенияDataGridViewTextBoxColumn.Name = "датавыселенияDataGridViewTextBoxColumn";
+            this.датавыселенияDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // статусDataGridViewTextBoxColumn
             // 
             this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
             this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
             this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
+            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // комментDataGridViewTextBoxColumn
             // 
             this.комментDataGridViewTextBoxColumn.DataPropertyName = "Коммент";
             this.комментDataGridViewTextBoxColumn.HeaderText = "Коммент";
             this.комментDataGridViewTextBoxColumn.Name = "комментDataGridViewTextBoxColumn";
+            this.комментDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // settlementDataGridViewTextBoxColumn
             // 

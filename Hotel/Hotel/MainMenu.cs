@@ -127,5 +127,12 @@ namespace Hotel
             jn.Show();
             this.Hide();
         }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            Settling sf = new Settling();
+            sf.Show();
+            this.Hide();
+        }
     }
 }

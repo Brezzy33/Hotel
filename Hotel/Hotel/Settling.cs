@@ -19,17 +19,19 @@ namespace Hotel
 
         private void Settling_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hotelDataSet.Clients' table. You can move, or remove it, as needed.
+            this.clientsTableAdapter.Fill(this.hotelDataSet.Clients);
             // TODO: This line of code loads data into the 'hotelDataSet.Numbers' table. You can move, or remove it, as needed.
             this.numbersTableAdapter.Fill(this.hotelDataSet.Numbers);
             // TODO: This line of code loads data into the 'hotelDataSet.TypeZasel' table. You can move, or remove it, as needed.
             this.typeZaselTableAdapter.Fill(this.hotelDataSet.TypeZasel);
-            // TODO: This line of code loads data into the 'hotelDataSet.Settlement' table. You can move, or remove it, as needed.
-            this.settlementTableAdapter.Fill(this.hotelDataSet.Settlement);
         }
 
         private void metroButton3_Click(object sender, EventArgs e)
         {
             this.Close();
+            MainMenu mn = new MainMenu();
+            mn.Show();
         }
 
         private void Math()
@@ -39,7 +41,7 @@ namespace Hotel
                 int x = Convert.ToInt32(txtWithoutDiscount.Text);
                 int y = Convert.ToInt32(txtDiscount.Text);
                 int day = (dateTimeSattl.Value - dateTimeRelease.Value).Days;
-                int z = ((x - (x * y / 100)) * (day + 1));
+                int z = -((x - (x /100 * y)) * (day + 1));
                 txtPriceWithDisc.Text = z.ToString();
             }
             catch (Exception ex)
